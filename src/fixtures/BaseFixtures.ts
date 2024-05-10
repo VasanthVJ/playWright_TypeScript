@@ -40,7 +40,7 @@ const test = base.extend<loginDetails & BaseFixtures>({
   // // ],
   page: async({}, use)=>{
     const context = await chromium.launchPersistentContext('',{
-      headless:false,
+      headless:process.env.CI? true: false,
       channel: 'chrome',
       args:['--start-maximized']
     });
