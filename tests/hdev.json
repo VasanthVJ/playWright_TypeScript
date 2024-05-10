@@ -1,0 +1,21 @@
+{
+    "testName":{
+        "country": "uk",
+        "product": "coke",
+        "crmId":"hdev",
+        "baseName": "john"
+    },
+    "LoginTest":[{
+        "country": "uk",
+        "product": "coke",
+        "crmId":"hdev",
+        "baseName": "john"
+    },
+    {
+        "country": "de",
+        "product": "jink",
+        "crmId":"uat",
+        "baseName": "admin"
+    }
+]
+}

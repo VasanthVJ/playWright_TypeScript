@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@pages/*":["src/pages/*"],
+            "@fixture/*":["/src/fixtures/*"],
+        },
+        "target": "ESNext",
+        "experimentalDecorators": true,
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "sourceMap": true,
+        "outDir": "../tests-out",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+    }
+}
