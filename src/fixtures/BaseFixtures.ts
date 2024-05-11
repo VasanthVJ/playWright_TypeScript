@@ -21,23 +21,6 @@ type BaseFixtures = {
 
 
 const test = base.extend<loginDetails & BaseFixtures>({
-
-
-  //   testHooks:[ async({page}, use)=>{
-  //     await page.goto('https://www.youtube.com/watch?v=lM-lqPun9P8');
-
-  //     console.log('Before each from fixture');
-
-  //     await use();
-
-  //     console.log('After each from fixture');
-
-   
-
-    
-  //   },
-  //     {auto:true},
-  // // ],
   page: async({}, use)=>{
     const context = await chromium.launchPersistentContext('',{
       headless:process.env.CI? true: false,
