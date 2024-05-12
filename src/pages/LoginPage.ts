@@ -69,7 +69,7 @@ export default class LoginPage{
         //await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         console.log("Enetering user name");
         await this.page.getByPlaceholder('Username').fill('Admin');
-        //const popUpPromise = this.page.waitForEvent('popup');
+        const popUpPromise = this.page.waitForEvent('popup');
         console.log("Entering password");
         await this.page.getByPlaceholder('Password').fill('admin123');
         await this.page.locator("//button[@type='submit']").click();
@@ -78,7 +78,6 @@ export default class LoginPage{
         await this.page.waitForURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
         await this.acceptAlerts();
         await expect(this.page).toHaveURL('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
-
     }
 
 
