@@ -1,7 +1,7 @@
 import {test as base, chromium, Page} from '@playwright/test';
-import Dashboard from 'pages/DashBoard';
-import LoginPage from 'pages/LoginPage';
-import SearhProduct from 'pages/searchProduct';
+import Dashboard from 'OrangeCRM/pages/DashBoardStep';
+import LoginPage from 'OrangeCRM/pages/LoginPage';
+import SearhProduct from 'OrangeCRM/pages/searchProduct';
 import BrowserLauncher from 'utils/browserUtil';
 
 
@@ -28,23 +28,19 @@ const test = base.extend<loginDetails & BaseFixtures>({
       args:['--start-maximized']
     });
     const pages = context.pages();
-
     const page = pages[0];
-    //const page = await browser.newPage();
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     await use(page);
     await context.close();
   },
   loginPage: async({page,dashBoard}, use)=>{
     console.time("Script duration");
-    console.log('Befgore each');
     const loginPage = new  LoginPage(page);
     await loginPage.performLogin();
+    await use(new  LoginPage(page)); 
 
-    //const page = await context.newPage();
 
-    await use(new  LoginPage(page));
-    console.log('After each');
+
     await dashBoard.logOut();
     console.timeEnd("Script duration");
   },

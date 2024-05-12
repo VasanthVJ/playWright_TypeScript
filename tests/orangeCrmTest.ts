@@ -1,17 +1,15 @@
 import test,{ expect} from "fixtures/BaseFixtures";
-import LoginPage from "pages/LoginPage";
+import LoginPage from "OrangeCRM/pages/LoginPage";
+import Dashboard  from "OrangeCRM/pageLocators/Dashboard";
 
 
 
 test("perform login", async({loginPage, page, dashBoard})=>{
-    //await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    //await loginPage.performLogin();
-
-    await dashBoard.selectMenu();
-    const newPage = await page.context().newPage();
-    await newPage.goto('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions');
-    await newPage.pause();
-    await newPage.close();
+    await dashBoard.selectMenu(Dashboard.MENU_LIST,"PIM");
+    //const newPage = await page.context().newPage();
+   // await newPage.goto('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions');
+    //await newPage.pause();
+    //await newPage.close();
 
 }) 
 
