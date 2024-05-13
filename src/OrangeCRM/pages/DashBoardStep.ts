@@ -32,6 +32,12 @@ export default class DashboardSteps{
         // await this.page.pause();
     }
 
+
+    public async getMyActions(){
+        
+    }
+
+
     public async logOut(){
 
         console.log('Performing logout');

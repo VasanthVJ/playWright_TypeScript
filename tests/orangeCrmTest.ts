@@ -4,8 +4,10 @@ import Dashboard  from "OrangeCRM/pageLocators/Dashboard";
 
 
 
-test("perform login", async({loginPage, page, dashBoard})=>{
+test("perform login", async({loginPage, page, dashBoard, pimStep})=>{
     await dashBoard.selectMenu(Dashboard.MENU_LIST,"PIM");
+    await pimStep.addEmployee();
+
     //const newPage = await page.context().newPage();
    // await newPage.goto('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions');
     //await newPage.pause();

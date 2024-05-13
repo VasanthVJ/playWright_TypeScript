@@ -1,6 +1,7 @@
 import {test as base, chromium, Page} from '@playwright/test';
 import Dashboard from 'OrangeCRM/pages/DashBoardStep';
 import LoginPage from 'OrangeCRM/pages/LoginPage';
+import PimSteps from 'OrangeCRM/pages/PimSteps';
 import SearhProduct from 'OrangeCRM/pages/searchProduct';
 import BrowserLauncher from 'utils/browserUtil';
 
@@ -16,6 +17,7 @@ type BaseFixtures = {
   loginPage: LoginPage;
   dashBoard: Dashboard;
   browserLaunch: BrowserLauncher;
+  pimStep: PimSteps
 };
 
 
@@ -49,7 +51,10 @@ const test = base.extend<loginDetails & BaseFixtures>({
   },
   searchProduct: async ({page}, use) => {
     await use(new SearhProduct(page));
-}
+},
+  pimStep: async({page}, use)=>{
+    await use(new PimSteps(page));
+  }
 });
 
 
