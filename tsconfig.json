@@ -5,6 +5,7 @@
             "@pages/*":["src/OrangeCRM/pages/*"],
             "@locators/*":["src/OrangeCRM/pageLocators/*"],
             "@fixture/*":["/src/fixtures/*"],
+    
         },
         "target": "ESNext",
         "experimentalDecorators": true,
