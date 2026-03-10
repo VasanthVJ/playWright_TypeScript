@@ -10,8 +10,8 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    #runs-on: ubuntu-latest
-    runs-on: vasanth
+    runs-on: ubuntu-latest
+    #runs-on: vasanth
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
